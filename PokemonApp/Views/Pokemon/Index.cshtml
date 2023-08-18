@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PokemonApp.Models.PokemonViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PokemonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PokemonType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PokemonPower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PokemonImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.favourite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PokemonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PokemonType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PokemonPower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PokemonImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.favourite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
